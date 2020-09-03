@@ -21,7 +21,6 @@ app.listen(PORT, () => {
 
 //Connect to MongoDB
 
-
 const URI = process.env.MONGODB_URL
 mongoose.connect(URI, {
   useCreateIndex: true,
