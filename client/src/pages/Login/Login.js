@@ -41,15 +41,22 @@ function Login({setIsLogin}) {
     }
   }
 
+  const [onLogin, setOnLogin] = useState(false)
+  const style = {
+    visibility: onLogin ? "visible" : "hidden",
+    opacity: onLogin ? 1 : 0
+  }
+
   return (
-    <section>
-      <div className="login">
+    <section className="login-page">
+      <div className="login create-note">
         <h2>Login</h2>
         <form onSubmit={loginSubmit}>
           <input
             type="email"
             name="email"
             id="login-email"
+            className="inputs"
             placeholder="Email"
             required
             value={user.email}
@@ -59,6 +66,7 @@ function Login({setIsLogin}) {
             type="password"
             name="password"
             id="login-password"
+            className="inputs"
             placeholder="Password"
             required
             value={user.password}
@@ -69,18 +77,19 @@ function Login({setIsLogin}) {
           <button type="submit">Login</button>
           <p>
             You don't have an account?
-            <span> Register Now</span>
+            <span onClick={()=> setOnLogin(true)}> Register Now</span>
           </p>
           <h3>{err}</h3>
         </form>
       </div>
-      <div className="register">
+      <div className="register create-note" style={style}>
         <h2>Register</h2>
         <form onSubmit={registerSubmit}>
           <input
             type="text"
             name="name"
             id="register-name"
+            className="inputs"
             placeholder="Your Name"
             required
             value={user.name}
@@ -90,6 +99,7 @@ function Login({setIsLogin}) {
             type="email"
             name="email"
             id="register-email"
+            className="inputs"
             placeholder="Email"
             required
             value={user.email}
@@ -99,6 +109,7 @@ function Login({setIsLogin}) {
             type="password"
             name="password"
             id="register-password"
+            className="inputs"
             placeholder="Password"
             required
             value={user.password}
@@ -109,7 +120,7 @@ function Login({setIsLogin}) {
           <button type="submit">Register</button>
           <p>
             You have an account?
-            <span> Login Now</span>
+            <span onClick={() => setOnLogin(false)}> Login Now</span>
           </p>
           <h3>{err}</h3>
         </form>

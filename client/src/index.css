@@ -22,22 +22,37 @@ body {
   width: 100%;
   min-height: 100vh;
   color: whitesmoke;
+  background-image: url(background-wall.jpg);
+  background-size: cover;
 }
 
 .notes-page header {
-  max-width: 1920px;
+  width: 100%;
   min-height: 100px;
   overflow: hidden;
   margin: 0 auto;
   display: flex;
+  position: fixed;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+  box-shadow: 0 0 5px rgb(32,32,32);
+  z-index: 10;
+  background-color: rgba(32,32,32, 0.85);
 }
 
 a {
   text-decoration: none;
   color: whitesmoke;
+}
+
+button {
+  border: 2px solid rgba(32,32,32, 0.7);
+}
+
+.inputs {
+  border: 1px solid rgba(32,32,32, 0.7);
+  border-radius: 2px;
 }
 
 .notes-page header .logo {
@@ -62,8 +77,8 @@ a {
 
 .notes-page section {
   width: 100%;
-  box-shadow: 0 0 5px rgb(32,32,32);
   padding: 20px 0;
+  
 }
 
 .note-wrapper {
@@ -72,6 +87,7 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   margin: auto;
+  margin-top: 100px;
 }
 
 .card {
@@ -96,6 +112,11 @@ a {
   border: none;
   outline: none;
   color: #323232;
+  font-size: 20px;
+}
+
+.close:hover {
+  color: darkred;
 }
 
 .card h4 {
@@ -107,7 +128,7 @@ a {
 
 .card .text-wrapper {
   width: 100%;
-  height: 150px;
+  height: 163px; 
   overflow: hidden;
   margin: 10px 0;
   color: #323232;
@@ -139,8 +160,102 @@ a {
   max-width: 500px;
   width: 100%;
   margin: auto;
+  margin-top: 150px;
   border: 2px solid white;
   padding: 30px;
   color: #323232;
   border-radius: 5px;
+  background-color: whitesmoke;
+}
+
+.create-note h2 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.create-note .row {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.create-note input,
+.create-note button {
+  width: 100%;
+  height: 40px;
+  padding: 0 5px;
+}
+
+.create-note label {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.create-note textarea {
+  width: 100%;
+  resize: none;
+  padding: 0 5px;
+  height: 150px;
+}
+
+.create-note button {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.content {
+  line-height: 20px;
+}
+
+@media (max-width: 500px) {
+  .create-note {
+    padding: 15px;
+    border: 5px solud #ccc;
+  }
+}
+
+/* Login / Register */
+
+.login-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.login input,
+.register input {
+  margin-bottom: 15px;
+}
+
+.login,
+.register {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: smokewhite;
+}
+
+.login-page h2,
+.login-page h3 {
+  color: #323232;
+}
+
+.login-page h3 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+.login-page p {
+  margin: 10px 0;
+  color: #343434;
+}
+
+.login-page span:hover {
+  color: darkblue;
+  cursor: pointer;
 }

@@ -12,7 +12,7 @@ function Nav({setIsLogin}) {
   return (
     <header>
       <div className="logo">
-        <h1><Link to="/">Notes</Link></h1>
+        <h1><Link to="/">Sticky Notes</Link></h1>
       </div>
       <ul>
         <li><Link to="/">Home</Link></li>
